@@ -7,7 +7,7 @@
     </head>
     <body>
     <h1>Página Principal</h1>
-    <% var texto = "Usando EJS"; %>
+    <% var texto = "Usuários do Sistema"; %>
     <p>
         <%= texto %>
     </p>
@@ -17,9 +17,16 @@
     <li><%= clientes[chave].nome %> - <%= clientes[chave].email %></li>
 
     <% }%>
-
     </ul>
 <br>
+
+<% if(erros){ %>
+    <ul>
+    <% for (var k in erros){ %>
+    <li><%= erro [k].msg %> </li>
+    <% } %>
+    </ul>
+    <% } %>
 
 <form action="/" method="post">
     <input type="text" name="nome" placeholder="Nome"/><br><br>

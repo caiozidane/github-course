@@ -1,0 +1,33 @@
+<!-- utilizando EJS serve para escrever javascript no meio do html -->
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Introdução Node JS</title>
+    </head>
+    <body>
+    <h1>Página Principal</h1>
+    <% var texto = "Usando EJS"; %>
+    <p>
+        <%= texto %>
+    </p>
+    <ul>
+    <% for(var chave in clientes){ %>
+
+    <li><%= clientes[chave].nome %> - <%= clientes[chave].email %></li>
+
+    <% }%>
+
+    </ul>
+<br>
+
+<form action="/" method="post">
+    <input type="text" name="nome" placeholder="Nome"/><br><br>
+    <input type="text" name="email" placeholder="E-MAIL"/><br><br>
+    <button>Adicionar</button>
+
+
+</form>
+
+</body>
+</html>

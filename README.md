@@ -4,9 +4,9 @@ Repositório utilizado para curso NodeJs
 
 Cadastro de usuário, validações feita com "express-validator"
 
- - CheckList- 
+         - CheckList- 
  
- [] Melhorar Validação de dados;
+ [ ] Melhorar Validação de dados;
  
  [ ] Melhorar validação de erros na home.ejs;
  

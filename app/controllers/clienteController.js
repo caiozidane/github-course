@@ -30,20 +30,8 @@ module.exports.store = function(req, res){
 
 };
 
-//verifica se o usuario já é cadsatrado
 
-// module.exports.show = function(req,res){
-//     clienteModel.find(req.params.id, function(erro,resultado){
-//     if(resultado[0] && !erro){
-//         res.render('site/detalhe',{cliente:resultado[0]});
-//     }else{
-//         console.log("Usuário não existe");
-//         res.redirect('/');
-//     }
-    
-//     });
-
-    
+//função n faz nada nem sei pq coloquei  | tentativa de validação de user
     module.exports.show = function(res){
         clienteModel.find(function(erro,dados){
         if(dados[1] && !erro){

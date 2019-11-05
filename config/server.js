@@ -13,7 +13,7 @@ module.exports = function(){
       // username must be an email
     check('username').isEmail(),
     // password must be at least 5 chars long
-    check('password').isLength({ min: 5 })
+    check('email').isLength({ min: 5 })
     ], (req, res) => {
     // Finds the validation errors in this request and wraps them in an object with handy functions
     var errors = validationResult(req);
@@ -22,7 +22,7 @@ module.exports = function(){
     }
       User.create({
         username: req.body.username,
-        password: req.body.password
+        email: req.body.password
     }).then(user => res.json(user));
     });
     

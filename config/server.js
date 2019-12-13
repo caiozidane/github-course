@@ -3,16 +3,14 @@ module.exports = function(){
     var bodyParser = require('body-parser');
     // var expressValidator = require('express-validator');
 
-
     var app = express();
    
-
     var { check, validationResult } = require('express-validator');
 
     app.get('/', [
       // username must be an email
     check('username').isEmail(),
-    // password must be at least 5 chars long
+    // password must be at least 5 chars longs
     check('email').isLength({ min: 5 })
     ], (req, res) => {
     // Finds the validation errors in this request and wraps them in an object with handy functions
@@ -26,13 +24,10 @@ module.exports = function(){
     }).then(user => res.json(user));
     });
     
-    
-
     var app = express();
     app.set('view engine','ejs');
     app.set('views', './app/views');
     
-
     app.use(bodyParser.json()); //support json encoded bodies
     app.use(bodyParser.urlencoded({ extended: true })); //support encoded bodies
 

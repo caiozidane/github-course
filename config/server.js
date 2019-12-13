@@ -33,11 +33,15 @@ module.exports = function(){
 
     // app.use(expressValidator());// suporte do validador express
 
+
+    //verificar o a rota para fazer o MongoDb funcionar
     var rotas = require('../app/routes/web');
     rotas(app);
 
     app.listen(8000, function(){
         console.log("localhost:8000");
     });
+
+
 
 };

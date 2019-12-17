@@ -1,6 +1,6 @@
 //conexao com mongoDB Atlas
 // const mongoose = require('mongoose');
-// mongoose.connect('mongo "mongodb+srv://omnistack-zduev.mongodb.net/test"', {useNewUrlParser: true});
+// mongoose.connect('mongo "mongodb+srv://caio:<c410b350m>@omnistack-zduev.mongodb.net/test?retryWrites=true&w=majority"', {useNewUrlParser: true});
 // const User = mongoose.model('Caio', { name: String });
 // const connec = new User({ name: 'Caio Zidane' });
 // connec.save().then(() => console.log('connection successfully'));

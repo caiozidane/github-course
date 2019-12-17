@@ -31,9 +31,7 @@ module.exports = function(){
     app.use(bodyParser.json()); //support json encoded bodies
     app.use(bodyParser.urlencoded({ extended: true })); //support encoded bodies
 
-    // app.use(expressValidator());// suporte do validador express
-
-
+    
     //verificar o a rota para fazer o MongoDb funcionar
     var rotas = require('../app/routes/web');
     rotas(app);

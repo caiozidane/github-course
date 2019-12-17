@@ -6,40 +6,42 @@ module.exports.index = function(req,res){
     });
 };
 
-module.exports.store = function(req, res){
-
-    //validação de usuário com Express-Validator
-    var express = require('express');
-    var app = express();
-
-    app.use(express.json());
+module.exports.store = function(req,res){
     var dados = req.body;
-
-    app.get('/', (req) =>{
-        req.body('nome','Preencha o Nome').notEmpty();
-    });    
-   
-    clienteModel.save(dados, function(erro){
-    if(!erro){
-    res.redirect('/');
-    }else{
-    console.log("Erro ao adicionar o cliente");
-    res.redirect('/');
-    }        
+  
+    req.body('nome','Preencha um Nome').notEmpty();  
+    req.body('nome', 'Nome deve ter de 3 a 20 caracteres').len(3, 20);
+    req.body('email','Preencha um E-mail').notEmpty();
+    req.body('email', 'Preencha um E-mail válido').isEmail();
+  
+    var validacaoErros = req.validationErrors();
+  
+    if(validacaoErros){
+      console.log(validacaoErros);
+      clienteModel.all(function(erro,resultado){
+        res.render('site/home',{clientes:resultado,erros:validacaoErros,dados:dados});
+      });
+      return;
+    }
+  
+    clienteModel.save(dados,function(erro,resultado){
+      if(!erro){
+        res.redirect('/');
+      }else{
+        console.log("Erro ao adicionar o cliente");
+        res.redirect('/');
+      }
     });
-
-};
-
-
-//função n faz nada nem sei pq coloquei  | tentativa de validação de user
-    module.exports.show = function(res){
-        clienteModel.find(function(erro,dados){
-        if(dados[1] && !erro){
-            res.render('site/detalhe',{cliente:dados[1]});
-        }else{
-            console.log("Usuário já existe no sistema");
-            res.redirect('/');
-        }
-        
-        })
-};
+  };
+  
+  module.exports.show = function(req,res){
+    clienteModel.find(req.params.id,function(erro,resultado){
+      if(resultado[0] && !erro){
+        res.render('site/detalhe',{cliente:resultado[0]});
+      }else{
+        console.log("Esse cliente não existe");
+        res.redirect('/');
+      }
+  
+    });
+  };

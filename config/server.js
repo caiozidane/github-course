@@ -37,7 +37,7 @@ module.exports = function(){
     rotas(app);
 
     app.listen(8000, function(){
-        console.log("localhost:8000");
+        console.log("Servidor rodando em localhost:8000");
     });
 
 

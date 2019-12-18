@@ -1,18 +1,22 @@
-//conexao com mongoDB Atlas
-// const mongoose = require('mongoose');
-// mongoose.connect('mongo "mongodb+srv://caio:<c410b350m>@omnistack-zduev.mongodb.net/test?retryWrites=true&w=majority"', {useNewUrlParser: true});
-// const User = mongoose.model('Caio', { name: String });
-// const connec = new User({ name: 'Caio Zidane' });
-// connec.save().then(() => console.log('connection successfully'));
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://caio:<password>@omnistack-zduev.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
-var mysql = require('mysql');
-var con = function(){
-  return mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password:'root',
-    database:'curso_node'
-  });
-}
-module.exports = con;
+
+
+// var mysql = require('mysql');
+// var con = function(){
+//   return mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password:'root',
+//     database:'curso_node'
+//   });
+// }
+// module.exports = con;
 

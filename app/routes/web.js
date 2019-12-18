@@ -1,7 +1,7 @@
 var clienteController = require('../controllers/clienteController');
 
 module.exports = function(app){
-    app.get('/contato', function(req,res){
+    app.get('/contato', function(res){
         res.render('site/contato');
     });
     

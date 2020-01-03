@@ -6,9 +6,9 @@ Cadastro de usuário, validações feita com "express-validator"
 
          - CheckList- 
  
- [ ] Melhorar Validação de dados;
+-[] Melhorar Validação de dados;
  
- [ ] Melhorar validação de erros na home.ejs;
+-[] Melhorar validação de erros na home.ejs;
  
- [ ] Refatorar clienteController.js;
+-[] Refatorar clienteController.js;
  

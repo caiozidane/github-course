@@ -1,14 +1,5 @@
-# github-course
+# Projeto Curso NodeJs
 Repositório utilizado para curso NodeJs
 
-
-Cadastro de usuário, validações feita com "express-validator"
-
-         - CheckList- 
- 
--[] Melhorar Validação de dados;
- 
--[] Melhorar validação de erros na home.ejs;
- 
--[] Refatorar clienteController.js;
- 
+Cadastro de usuário, 
+Validações feita com "express-validator",

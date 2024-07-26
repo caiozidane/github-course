@@ -31,15 +31,13 @@ module.exports = function(){
     app.use(bodyParser.json()); //support json encoded bodies
     app.use(bodyParser.urlencoded({ extended: true })); //support encoded bodies
 
-    // app.use(expressValidator());// suporte do validador express
-
-
+    
     //verificar o a rota para fazer o MongoDb funcionar
     var rotas = require('../app/routes/web');
     rotas(app);
 
     app.listen(8000, function(){
-        console.log("localhost:8000");
+        console.log("Servidor rodando em localhost:8000");
     });
 
 

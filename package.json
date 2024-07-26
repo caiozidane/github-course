@@ -1,7 +1,7 @@
 {
   "name": "introducao_ao_node_js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repositório utilizado para curso NodeJs",
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -17,5 +17,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiozidane/github-course.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/caiozidane/github-course/issues"
+  },
+  "homepage": "https://github.com/caiozidane/github-course#readme"
 }
